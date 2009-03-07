@@ -1,0 +1,29 @@
+!!! Strict
+%html{"xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Smibs
+    %link{:href => versioned('style'), :media => "screen", :rel => "stylesheet", :type => "text/css"}/  
+  %body
+
+    %a{:href => '/fabrics/new'}
+      New Fabric
+    %a{:href => '/fabrics/index'}
+      Fabrics Index
+    %a{:href => '/'}
+      Smibs
+    %a{:href => '/'}
+      SmibsZen
+    %br
+    %a{:href => '/fabrics/new'}
+      Paid 
+    %a{:href => '/fabrics/index'}
+      Unpaid
+    %a{:href => '/'}
+      Date Default
+    %a{:href => '/'}
+      Something
+    %h1 SmibsZen
+
+    =yield
+

@@ -1,0 +1,32 @@
+%h3
+  Orders Count:
+  =@orders.count
+%table
+  %tr.definition
+    %td.definition Buyers Name
+    %td.definition Buyers Email
+    %td.definition Date Created
+    %td.definition Emailed?
+    %td.definition Payment?
+    %td.definition Posted?
+    %td.definition Notes?
+    %td.definition More..
+
+  -@orders.each do |order|
+    %tr
+      %td=order.buyers_name
+      %td=order.buyers_email
+      %td=order.created_on.to_s
+      %td=YesOrNo(order.emailed)
+      %td=YesOrNo(order.payment)
+      %td=YesOrNo(order.posted)
+      %td=YesOrNo(order.notes)
+      %td 
+        %a{:href => "/orders/#{order.id}"}
+          More...
+
+          
+    
+
+
+      

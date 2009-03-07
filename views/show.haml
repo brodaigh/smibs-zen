@@ -1,0 +1,80 @@
+%h3.right
+.clear
+  Order ID:
+  =@order.id
+  | Date:
+  =@order.created_on
+
+%table.show.right
+  %tr.show
+    %th{:colspan => 2} Order:
+  %tr
+    %td.show
+      %ol
+        -@order.fabrics.each do |smib|
+          %li
+            =smib.title
+            %span.black 
+              ID.
+              =smib.id
+              %img{:src => "#{smib.image}"}
+
+  %tr.show
+    %th{:colspan => 2} 
+      %span.highlight Notes:
+  %tr.show
+    %td.show=@order.notes
+  %tr.show
+    %td.show
+      %a{:href => '/'}
+        edit      
+
+%table.show.left
+  %tr.show
+    %th{:colspan => 2} Buyer:
+  %tr.show
+    %td.show.label Name
+    %td.show=@order.buyers_name
+  %tr.show
+    %td.show.label Email
+    %td.show=@order.buyers_email
+
+  %tr.show
+    %th{:colspan => 2}  Send To:
+  %tr.show
+    %td.show.label Name
+    %td.show=@order.recipients_name
+  %tr.show
+    %td.show.label Address
+    %td.show=@order.recipients_address
+  %tr.show
+    %td.show.label Posted?
+    %td.show
+      =YesOrNo(@order.posted)
+      %a{:href => '/'}
+        update
+  %tr.show
+    %td.show.label Overseas?
+    %td.show
+      =YesOrNo(@order.overseas)
+      %a{:href => '/'}
+        update
+
+  %tr.show
+    %th{:colspan => 2}  Payment:
+  %tr.show
+    %td.show.label Preference
+    %td.show=@order.payment_preference
+  %tr.show
+    %td.show.label Email Sent
+    %td.show
+      =YesOrNo(@order.emailed)
+      %a{:href => '/'}
+        update
+  %tr.show
+    %td.show.label Paid yet?
+    %td.show
+      =YesOrNo(@order.payment)
+      %a{:href => '/'}
+        update 
+  

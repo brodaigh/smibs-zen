@@ -1,0 +1,3 @@
+SmibsZen connects to "Smibs":http:github.com/brodaigh/smibs/tree/master. It is for managing orders of Smibs which are a tangible product.
+
+Not production ready.
